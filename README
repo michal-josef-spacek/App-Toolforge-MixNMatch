@@ -1,0 +1,54 @@
+NAME
+    App::Toolforge::MixNMatch - Perl class for mix-n-match application.
+
+SYNOPSIS
+     use App::Toolforge::MixNMatch;
+
+     my $obj = App::Toolforge::MixNMatch->new;
+     $obj->run;
+
+METHODS
+    "new()"
+             Constructor.
+
+    "run()"
+             Run.
+
+ERRORS
+     new():
+             From Class::Utils:
+                     Unknown parameter '%s'.
+
+EXAMPLE
+     use strict;
+     use warnings;
+
+     use App::Toolforge::MixNMatch;
+
+     # Run.
+     exit App::Toolforge::MixNMatch->new->run;
+
+     # Output:
+     # Usage: ./examples/ex1.pl [-h] [--version]
+     #         -h              Print help.
+     #         --version       Print version.
+
+DEPENDENCIES
+    Getopt::Std.
+
+REPOSITORY
+    <https://github.com/tupinek/App-Toolforge-MixNMatch>.
+
+AUTHOR
+    Michal Josef Špaček <mailto:skim@cpan.org>
+
+    <http://skim.cz>
+
+LICENSE AND COPYRIGHT
+    © 2020 Michal Josef Špaček
+
+    BSD 2-Clause License
+
+VERSION
+    0.01
+
