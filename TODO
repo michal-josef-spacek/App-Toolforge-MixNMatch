@@ -4,7 +4,7 @@ TODO
 3. Finish doc.
 4. Rewrite from LWP::Simple to LWP::UserAgent.
 LWP::Simple cannot return any information about error.
-I have missing LWP::UserAgent::https and no information.
+I have missing LWP::Protocol::https and no information.
 5.
 
 Applied

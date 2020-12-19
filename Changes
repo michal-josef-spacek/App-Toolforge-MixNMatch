@@ -1,4 +1,5 @@
 0.04
+ - Aaa. Bad module dependency. Right is LWP::Protocol::https.
 
 0.03 2020-12-19T18:33:33+01:00
  - Fix missing LWP::UserAgent::https dependency for urls with https://.

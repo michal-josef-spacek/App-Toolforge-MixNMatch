@@ -27,8 +27,8 @@ requires:
   Getopt::Std: 0
   IO::Barf: 0
   JSON::XS: 0
+  LWP::Protocol::https: 0
   LWP::Simple: 0
-  LWP::UserAgent::https: 0
   Perl6::Slurp: 0
   Readonly: 0
   Toolforge::MixNMatch::Diff: 0.01
