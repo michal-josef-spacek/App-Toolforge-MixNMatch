@@ -10,6 +10,7 @@ use JSON::XS;
 use LWP::Simple qw(get);
 use Perl6::Slurp qw(slurp);
 use Readonly;
+use Toolforge::MixNMatch::Diff;
 use Toolforge::MixNMatch::Print::Catalog;
 use Toolforge::MixNMatch::Struct::Catalog;
 use Unicode::UTF8 qw(encode_utf8);
@@ -32,7 +33,7 @@ sub new {
 }
 
 sub command_diff {
-	my ($json_file1, $json_file2) = @_;
+	my ($json_file1, $json_file2, $print_options) = @_;
 
 	if (! defined $json_file1 || ! -r $json_file1) {
 		return (1, "Doesn't exist JSON file #1 for diff.");
@@ -41,7 +42,27 @@ sub command_diff {
 		return (1, "Doesn't exist JSON file #2 for diff.");
 	}
 
-	# TODO
+	my $opts_hr;
+	if (defined $print_options) {
+		$opts_hr = {};
+		foreach my $print_option (split m/,/, $print_options) {
+			$opts_hr->{$print_option} = 1;
+		}
+	}
+
+	my $json1 = slurp($json_file1);
+	my $json2 = slurp($json_file2);
+
+	my $cat1_hr = decode_json($json1);
+	my $cat2_hr = decode_json($json2);
+
+	my $obj1 = Toolforge::MixNMatch::Struct::Catalog::struct2obj($cat1_hr->{'data'});
+	my $obj2 = Toolforge::MixNMatch::Struct::Catalog::struct2obj($cat2_hr->{'data'});
+
+	my $diff = Toolforge::MixNMatch::Diff::diff($obj1, $obj2);
+
+	my $ret = Toolforge::MixNMatch::Print::Catalog::print($diff, $opts_hr);
+	print encode_utf8($ret)."\n";
 
 	return (0, undef);
 }

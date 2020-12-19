@@ -26,6 +26,7 @@ requires 'JSON::XS' => 0;
 requires 'LWP::Simple' => 0;
 requires 'Perl6::Slurp' => 0;
 requires 'Readonly' => 0;
+requires 'Toolforge::MixNMatch::Diff' => 0.01;
 requires 'Toolforge::MixNMatch::Print' => 0.02;
 requires 'Toolforge::MixNMatch::Struct' => 0.02;
 requires 'Unicode::UTF8' => 0;
