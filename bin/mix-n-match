@@ -32,7 +32,7 @@ mix-n-match - Script to handle catalog files.
 
 =head1 DESCRIPTION
 
-mix-n-match script uses Toolforge::MixNMatch to handle catalog files.
+mix-n-match script uses Toolforge::MixNMatch::* modules to handle catalog files.
 
 =head1 ARGUMENTS
 
@@ -124,6 +124,22 @@ Possible commands are: diff, download, print
 
  # Output:
  # Catalog with '3869' ID was saved to '3869.json'.
+
+=head1 SEE ALSO
+
+=over
+
+=item L<Toolforge::MixNMatch::Diff>
+
+Toolforge Mix'n'match tool object diff routines.
+
+=item L<Toolforge::MixNMatch::Object>
+
+Toolforge Mix'n'match tool objects.
+
+=item L<Toolforge::MixNMatch::Print>
+
+Toolforge Mix'n'match tool object print routines.
 
 =head1 REPOSITORY
 

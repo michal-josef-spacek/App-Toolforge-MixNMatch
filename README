@@ -5,7 +5,8 @@ SYNOPSIS
      mix-n-match [-h] [--version] [command] [command_args ..]
 
 DESCRIPTION
-    mix-n-match script uses Toolforge::MixNMatch to handle catalog files.
+    mix-n-match script uses Toolforge::MixNMatch::* modules to handle
+    catalog files.
 
 ARGUMENTS
     *       "-h"
@@ -82,6 +83,16 @@ EXAMPLE1
      # Output:
      # Catalog with '3869' ID was saved to '3869.json'.
 
+SEE ALSO
+    Toolforge::MixNMatch::Diff
+        Toolforge Mix'n'match tool object diff routines.
+
+    Toolforge::MixNMatch::Object
+        Toolforge Mix'n'match tool objects.
+
+    Toolforge::MixNMatch::Print
+        Toolforge Mix'n'match tool object print routines.
+
 REPOSITORY
     <https://github.com/tupinek/App-Toolforge-MixNMatch>
 
@@ -97,4 +108,11 @@ LICENSE AND COPYRIGHT
 
 VERSION
     0.01
+
+POD ERRORS
+    Hey! The above document had some coding errors, which are explained
+    below:
+
+    Around line 144:
+        You forgot a '=back' before '=head1'
 
