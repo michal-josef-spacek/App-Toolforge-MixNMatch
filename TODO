@@ -1,10 +1,12 @@
 TODO
 ====
 1. Tests.
-2. Optimization of App::Toolforge::MixNMatch
-Create helpers for common things as conversion from json file to catalog.
 3. Finish doc.
 4.
 
 Applied
 =======
+2. Optimization of App::Toolforge::MixNMatch
+Create helpers for common things as conversion from json file to catalog.
+
+OK [20201219] skim
