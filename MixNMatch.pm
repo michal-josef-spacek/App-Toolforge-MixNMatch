@@ -80,6 +80,7 @@ sub command_download {
 	my $json = download_catalog_detail($catalog_id);
 	barf($output_file, $json);
 
+	print "Catalog with '$catalog_id' ID was saved to '$output_file'.\n";
 
 	return (0, undef);
 }
