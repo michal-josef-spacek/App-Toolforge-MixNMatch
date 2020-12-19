@@ -116,7 +116,17 @@ sub run {
 		print STDERR "Usage: $0 [-h] [--version] [command] [command_args ..]\n";
 		print STDERR "\t-h\t\tPrint help.\n";
 		print STDERR "\t--version\tPrint version.\n";
-		print STDERR "\tcommand\tCommand (diff, print).\n";
+		print STDERR "\tcommand\t\tCommand (diff, download, print).\n\n";
+		print STDERR "\tcommand 'diff' arguments:\n";
+		print STDERR "\t\tjson_file1 - JSON file #1\n";
+		print STDERR "\t\tjson_file2 - JSON file #2\n";
+		print STDERR "\t\t[print_options] - Print options (type, count, year_months, users)\n";
+		print STDERR "\tcommand 'download' arguments:\n";
+		print STDERR "\t\tcatalog_id - Catalog ID\n";
+		print STDERR "\t\t[output_file] - Output file (default is catalog_id.json)\n";
+		print STDERR "\tcommand 'print' arguments:\n";
+		print STDERR "\t\tjson_file or catalog_id - Catalog ID or JSON file\n";
+		print STDERR "\t\t[print_options] - Print options (type, count, year_months, users)\n";
 		return 1;
 	}
 	my $command = shift @ARGV;
