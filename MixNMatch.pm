@@ -32,6 +32,16 @@ sub new {
 	return $self;
 }
 
+sub _catalog_json_file_to_obj {
+	my $json_file = shift;
+
+	my $json = slurp($json_file);
+	my $struct_hr = decode_json($json);
+	my $obj = Toolforge::MixNMatch::Struct::Catalog::struct2obj($struct_hr->{'data'});
+
+	return $obj;
+}
+
 sub _command_diff {
 	my ($json_file1, $json_file2, $print_options) = @_;
 
@@ -50,14 +60,8 @@ sub _command_diff {
 		}
 	}
 
-	my $json1 = slurp($json_file1);
-	my $json2 = slurp($json_file2);
-
-	my $cat1_hr = decode_json($json1);
-	my $cat2_hr = decode_json($json2);
-
-	my $obj1 = Toolforge::MixNMatch::Struct::Catalog::struct2obj($cat1_hr->{'data'});
-	my $obj2 = Toolforge::MixNMatch::Struct::Catalog::struct2obj($cat2_hr->{'data'});
+	my $obj1 = _catalog_json_file_to_obj($json_file1);
+	my $obj2 = _catalog_json_file_to_obj($json_file2);
 
 	my $diff = Toolforge::MixNMatch::Diff::diff($obj1, $obj2);
 
