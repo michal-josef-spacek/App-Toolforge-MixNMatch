@@ -19,7 +19,7 @@ use Unicode::UTF8 qw(encode_utf8);
 Readonly::Scalar our $URI_BASE => 'https://mix-n-match.toolforge.org/';
 Readonly::Scalar our $URI_CATALOG_DETAIL => $URI_BASE.'api.php?query=catalog_details&catalog=%s';
 
-our $VERSION = 0.02;
+our $VERSION = 0.03;
 
 # Constructor.
 sub new {
@@ -270,6 +270,6 @@ BSD 2-Clause License
 
 =head1 VERSION
 
-0.02
+0.03
 
 =cut
