@@ -29,6 +29,7 @@ requires 'Readonly' => 0;
 requires 'Toolforge::MixNMatch::Diff' => 0.01;
 requires 'Toolforge::MixNMatch::Print' => 0.02;
 requires 'Toolforge::MixNMatch::Object' => 0.02;
+requires 'Toolforge::MixNMatch::Struct' => 0.01;
 requires 'Unicode::UTF8' => 0;
 resources 'bugtracker' => 'https://github.com/michal-josef-spacek/App-Toolforge-MixNMatch/issues',
 resources 'homepage' => 'https://github.com/michal-josef-spacek/App-Toolforge-MixNMatch';

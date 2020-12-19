@@ -1,5 +1,6 @@
 0.02
  - Add examples/ directory.
+ - Fix dependency.
  - Fix example in doc.
 
 0.01 2020-12-19T12:17:11+01:00

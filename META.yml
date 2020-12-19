@@ -33,6 +33,7 @@ requires:
   Toolforge::MixNMatch::Diff: 0.01
   Toolforge::MixNMatch::Object: 0.02
   Toolforge::MixNMatch::Print: 0.02
+  Toolforge::MixNMatch::Struct: 0.01
   Unicode::UTF8: 0
   perl: 5.6.2
 resources:
