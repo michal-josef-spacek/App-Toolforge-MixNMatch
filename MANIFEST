@@ -18,6 +18,7 @@ MANIFEST			This list of files
 META.yml
 MixNMatch.pm
 README
+SIGNATURE
 t/App-Toolforge-MixNMatch/01-use.t
 t/App-Toolforge-MixNMatch/02-version.t
 xt/App-Toolforge-MixNMatch/01-pod_coverage.t
