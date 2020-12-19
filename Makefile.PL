@@ -17,7 +17,7 @@ install_script 'bin/mix-n-match';
 license 'bsd';
 name 'App-Toolforge-MixNMatch';
 perl_version 5.006002;
-readme_from 'MixNMatch.pm';
+readme_from 'bin/mix-n-match';
 recursive_author_tests('xt');
 requires 'Error::Pure' => 0.15;
 requires 'Getopt::Std' => 0;

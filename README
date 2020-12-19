@@ -1,43 +1,89 @@
 NAME
-    App::Toolforge::MixNMatch - Perl class for mix-n-match application.
+    mix-n-match - Script to handle catalog files.
 
 SYNOPSIS
-     use App::Toolforge::MixNMatch;
+     mix-n-match [-h] [--version] [command] [command_args ..]
 
-     my $obj = App::Toolforge::MixNMatch->new;
-     $obj->run;
+DESCRIPTION
+    mix-n-match script uses Toolforge::MixNMatch to handle catalog files.
 
-METHODS
-    "new()"
-             Constructor.
+ARGUMENTS
+    *       "-h"
 
-    "run()"
-             Run.
+            Print help.
 
-ERRORS
-     new():
-             From Class::Utils:
-                     Unknown parameter '%s'.
+    *       "--version"
 
-EXAMPLE
-     use strict;
-     use warnings;
+            Print version of script.
 
-     use App::Toolforge::MixNMatch;
+    *       "command"
 
-     # Run.
-     exit App::Toolforge::MixNMatch->new->run;
+            Command. Possible commands are: diff, download, print
 
-     # Output:
-     # Usage: ./examples/ex1.pl [-h] [--version]
+    *       "command_args"
+
+            "diff"
+                 json_file1 - JSON file #1.
+                 json_file2 - JSON file #2.
+                 [print_options] - Print options (type, count, year_months, users). It's optional.
+
+            "download"
+                 catalog_id - Catalog ID.
+                 [output_file] - Output file (default is catalog_id.json). It's optional.
+
+            "print"
+                 json_file or catalog_id - Catalog ID or JSON file.
+                 [print_options] - Print options (type, count, year_months, users). It's optional.
+
+EXAMPLE1
+     mix-n-match
+
+     # Output like:
+     # Usage: mix-n-match [-h] [--version] [command] [command_args ..]
      #         -h              Print help.
      #         --version       Print version.
+     #         command         Command (diff, download, print).
+     #
+     #         command 'diff' arguments:
+     #                 json_file1 - JSON file #1
+     #                 json_file2 - JSON file #2
+     #                 [print_options] - Print options (type, count, year_months, users)
+     #         command 'download' arguments:
+     #                 catalog_id - Catalog ID
+     #                 [output_file] - Output file (default is catalog_id.json)
+     #         command 'print' arguments:
+     #                 json_file or catalog_id - Catalog ID or JSON file
+     #                 [print_options] - Print options (type, count, year_months, users)
 
-DEPENDENCIES
-    Getopt::Std.
+  EXAMPLE2
+     mix-n-match print 3869
+
+     # Output like (20201219 - https://mix-n-match.toolforge.org/#/catalog/3869):
+     # Type: Q5
+     # Count: 875
+     # Year/months:
+     #         2020/09: 432
+     #         2020/10: 103
+     #         2020/11: 44
+     #         2020/12: 32
+     # Users:
+     #         Skim (1192968): 541
+     #         Automatic name/date matcher (3): 51
+     #         Jklamo (2399): 6
+     #         Michal Josef Špaček (WMCZ) (4735667): 5
+     #         -1 (421968): 4
+     #         Adam Harangozó (54660): 2
+     #         Epìdosis (54694): 1
+     #         Auxiliary data matcher (4): 1
+
+   EXAMPLE3
+     mix-n-match download 3869
+
+     # Output:
+     # Catalog with '3869' ID was saved to '3869.json'.
 
 REPOSITORY
-    <https://github.com/tupinek/App-Toolforge-MixNMatch>.
+    <https://github.com/tupinek/App-Toolforge-MixNMatch>
 
 AUTHOR
     Michal Josef Špaček <mailto:skim@cpan.org>
