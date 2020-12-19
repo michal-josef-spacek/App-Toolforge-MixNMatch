@@ -1,3 +1,5 @@
+0.04
+
 0.03 2020-12-19T18:33:33+01:00
  - Fix missing LWP::UserAgent::https dependency for urls with https://.
  - Update minimal dependency to Toolforge::MixNMatch::Struct@0.02.

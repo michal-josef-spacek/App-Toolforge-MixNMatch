@@ -38,7 +38,7 @@ resources 'repository' => 'git://github.com/michal-josef-spacek/App-Toolforge-Mi
 test_requires 'Test::More' => 0;
 test_requires 'Test::NoWarnings' => 0;
 tests_recursive;
-version '0.03';
+version '0.04';
 
 # Run.
 WriteAll();
