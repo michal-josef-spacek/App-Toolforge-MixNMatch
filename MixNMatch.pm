@@ -70,7 +70,7 @@ sub command_diff {
 sub command_download {
 	my ($catalog_id, $output_file) = @_;
 
-	if (! defined $catalog_id || $catalog_id =~ m/^\d+$/ms) {
+	if (! defined $catalog_id || $catalog_id !~ m/^\d+$/ms) {
 		return (1, 'Missing or bad catalog ID.');
 	}
 	if (! defined $output_file) {
@@ -79,6 +79,7 @@ sub command_download {
 
 	my $json = download_catalog_detail($catalog_id);
 	barf($output_file, $json);
+
 
 	return (0, undef);
 }
