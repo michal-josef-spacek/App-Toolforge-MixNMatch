@@ -18,6 +18,7 @@ meta-spec:
 name: App-Toolforge-MixNMatch
 no_index:
   directory:
+    - examples
     - inc
     - t
     - xt
