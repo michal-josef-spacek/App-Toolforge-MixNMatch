@@ -85,8 +85,8 @@ sub command_print {
 	my $struct_hr = decode_json($json);
 	my $obj = Toolforge::MixNMatch::Struct::Catalog::struct2obj($struct_hr->{'data'});
 	my $ret = Toolforge::MixNMatch::Print::Catalog::print($obj, $opts_hr);
-	print encode_utf8($ret)."\n";	
-	
+	print encode_utf8($ret)."\n";
+
 	return (0, undef);
 }
 
