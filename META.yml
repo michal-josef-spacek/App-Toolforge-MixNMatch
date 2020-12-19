@@ -29,6 +29,7 @@ requires:
   LWP::Simple: 0
   Perl6::Slurp: 0
   Readonly: 0
+  Toolforge::MixNMatch::Diff: 0.01
   Toolforge::MixNMatch::Print: 0.02
   Toolforge::MixNMatch::Struct: 0.02
   Unicode::UTF8: 0
