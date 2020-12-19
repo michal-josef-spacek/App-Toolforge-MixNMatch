@@ -24,6 +24,7 @@ requires 'Getopt::Std' => 0;
 requires 'IO::Barf' => 0;
 requires 'JSON::XS' => 0;
 requires 'LWP::Simple' => 0;
+requires 'LWP::UserAgent::https' => 0;
 requires 'Perl6::Slurp' => 0;
 requires 'Readonly' => 0;
 requires 'Toolforge::MixNMatch::Diff' => 0.01;
