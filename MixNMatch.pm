@@ -3,7 +3,6 @@ package App::Toolforge::MixNMatch;
 use strict;
 use warnings;
 
-use English;
 use Error::Pure qw(err);
 use Getopt::Std;
 use IO::Barf qw(barf);
