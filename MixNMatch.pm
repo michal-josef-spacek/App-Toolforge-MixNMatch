@@ -32,7 +32,7 @@ sub new {
 	return $self;
 }
 
-sub command_diff {
+sub _command_diff {
 	my ($json_file1, $json_file2, $print_options) = @_;
 
 	if (! defined $json_file1 || ! -r $json_file1) {
@@ -67,7 +67,7 @@ sub command_diff {
 	return (0, undef);
 }
 
-sub command_download {
+sub _command_download {
 	my ($catalog_id, $output_file) = @_;
 
 	if (! defined $catalog_id || $catalog_id !~ m/^\d+$/ms) {
@@ -77,7 +77,7 @@ sub command_download {
 		$output_file = $catalog_id.'.json';
 	}
 
-	my $json = download_catalog_detail($catalog_id);
+	my $json = _download_catalog_detail($catalog_id);
 	barf($output_file, $json);
 
 	print "Catalog with '$catalog_id' ID was saved to '$output_file'.\n";
@@ -85,14 +85,14 @@ sub command_download {
 	return (0, undef);
 }
 
-sub command_print {
+sub _command_print {
 	my ($json_file_or_catalog_id, $print_options) = @_;
 
 	my $json;
 	if (-r $json_file_or_catalog_id) {
 		$json = slurp($json_file_or_catalog_id);
 	} elsif ($json_file_or_catalog_id =~ m/^\d+$/ms) {
-		$json = download_catalog_detail($json_file_or_catalog_id);
+		$json = _download_catalog_detail($json_file_or_catalog_id);
 	} else {
 		return (1, "Doesn't exist JSON file or catalog ID for print.");
 	}
@@ -113,7 +113,7 @@ sub command_print {
 	return (0, undef);
 }
 
-sub download_catalog_detail {
+sub _download_catalog_detail {
 	my $catalog_id = shift;
 
 	my $uri = sprintf $URI_CATALOG_DETAIL, $catalog_id;
@@ -157,11 +157,11 @@ sub run {
 
 	my ($return, $error);
 	if ($command eq 'diff') {
-		($return, $error) = command_diff(@command_args);
+		($return, $error) = _command_diff(@command_args);
 	} elsif ($command eq 'download') {
-		($return, $error) = command_download(@command_args);
+		($return, $error) = _command_download(@command_args);
 	} elsif ($command eq 'print') {
-		($return, $error) = command_print(@command_args);
+		($return, $error) = _command_print(@command_args);
 	} else {
 		print STDERR "Command '$command' doesn't supported.\n";
 		return 1;
