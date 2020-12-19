@@ -52,13 +52,7 @@ sub _command_diff {
 		return (1, "Doesn't exist JSON file #2 for diff.");
 	}
 
-	my $opts_hr;
-	if (defined $print_options) {
-		$opts_hr = {};
-		foreach my $print_option (split m/,/, $print_options) {
-			$opts_hr->{$print_option} = 1;
-		}
-	}
+	my $opts_hr = _process_print_options($print_options);
 
 	my $obj1 = _catalog_json_file_to_obj($json_file1);
 	my $obj2 = _catalog_json_file_to_obj($json_file2);
@@ -101,13 +95,7 @@ sub _command_print {
 		return (1, "Doesn't exist JSON file or catalog ID for print.");
 	}
 
-	my $opts_hr;
-	if (defined $print_options) {
-		$opts_hr = {};
-		foreach my $print_option (split m/,/, $print_options) {
-			$opts_hr->{$print_option} = 1;
-		}
-	}
+	my $opts_hr = _process_print_options($print_options);
 
 	my $struct_hr = decode_json($json);
 	my $obj = Toolforge::MixNMatch::Struct::Catalog::struct2obj($struct_hr->{'data'});
@@ -127,6 +115,22 @@ sub _download_catalog_detail {
 	}
 
 	return $json;
+}
+
+sub _process_print_options {
+	my $print_options = shift;
+
+	if (! defined $print_options) {
+		return;
+	}
+
+
+	my $opts_hr = {};
+	foreach my $print_option (split m/,/, $print_options) {
+		$opts_hr->{$print_option} = 1;
+	}
+
+	return $opts_hr;
 }
 
 # Run script.
