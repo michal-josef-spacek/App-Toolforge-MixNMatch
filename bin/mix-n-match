@@ -96,7 +96,7 @@ Possible commands are: diff, download, print
  #                 json_file or catalog_id - Catalog ID or JSON file
  #                 [print_options] - Print options (type, count, year_months, users)
 
-=head2 EXAMPLE2
+=head1 EXAMPLE2
 
  mix-n-match print 3869
 
@@ -118,7 +118,7 @@ Possible commands are: diff, download, print
  #         Epìdosis (54694): 1
  #         Auxiliary data matcher (4): 1
 
-=head3 EXAMPLE3
+=head1 EXAMPLE3
 
  mix-n-match download 3869
 
