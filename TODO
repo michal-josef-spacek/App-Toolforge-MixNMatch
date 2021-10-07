@@ -5,7 +5,8 @@ TODO
 4. Rewrite from LWP::Simple to LWP::UserAgent.
 LWP::Simple cannot return any information about error.
 I have missing LWP::Protocol::https and no information.
-5.
+5. Rewrite to WebService::MixNMatch
+6.
 
 Applied
 =======
