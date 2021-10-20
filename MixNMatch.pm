@@ -250,7 +250,17 @@ App::Toolforge::MixNMatch - Perl class for mix-n-match application.
 
 =head1 DEPENDENCIES
 
-L<Getopt::Std>.
+L<Error::Pure>,
+L<Getopt::Std>,
+L<IO::Barf>,
+L<JSON::XS>,
+L<LWP::Simple>,
+L<Perl6::Slurp>,
+L<Readonly>,
+L<Toolforge::MixNMatch::Diff>,
+L<Toolforge::MixNMatch::Print::Catalog>,
+L<Toolforge::MixNMatch::Struct::Catalog>,
+L<Unicode::UTF8>.
 
 =head1 REPOSITORY
 

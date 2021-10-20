@@ -1,5 +1,6 @@
 0.05
  - Fix doc of mix-n-match.
+ - Fix list of dependencies in doc.
  - Update copyright years.
 
 0.04 2020-12-19T18:36:05+01:00
