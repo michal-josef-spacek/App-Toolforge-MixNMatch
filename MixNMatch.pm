@@ -124,7 +124,6 @@ sub _process_print_options {
 		return;
 	}
 
-
 	my $opts_hr = {};
 	foreach my $print_option (split m/,/, $print_options) {
 		$opts_hr->{$print_option} = 1;
