@@ -6,7 +6,8 @@ TODO
 LWP::Simple cannot return any information about error.
 I have missing LWP::Protocol::https and no information.
 5. Rewrite to WebService::MixNMatch
-6.
+6. Implementation of oauth.
+7.
 
 Applied
 =======
