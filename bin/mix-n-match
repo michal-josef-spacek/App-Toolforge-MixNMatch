@@ -141,6 +141,8 @@ Toolforge Mix'n'match tool objects.
 
 Toolforge Mix'n'match tool object print routines.
 
+=back
+
 =head1 REPOSITORY
 
 L<https://github.com/tupinek/App-Toolforge-MixNMatch>

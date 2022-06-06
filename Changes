@@ -1,5 +1,6 @@
 0.05
  - Fix doc of mix-n-match.
+ - Fix issue in mix-n-match pod.
  - Fix list of dependencies in doc.
  - Update copyright years.
 
