@@ -3,9 +3,13 @@ abstract: "Toolforge Mix'n'match tool app."
 author:
   - 'Michal Josef Spacek <skim@cpan.org>'
 build_requires:
+  English: 0
   ExtUtils::MakeMaker: 6.59
+  File::Object: 0
+  File::Spec::Functions: 0
   Test::More: 0
   Test::NoWarnings: 0
+  Test::Output: 0
 configure_requires:
   ExtUtils::MakeMaker: 6.59
 distribution_type: module
